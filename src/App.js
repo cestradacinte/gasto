@@ -3,7 +3,6 @@ import './App.css';
 import ExpenseForm from './components/ExpenseForm';
 import IncomeForm from './components/IncomeForm';
 import Dashboard from './components/Dashboard';
-import Ganancia from './components/Ganancia';
 
 function App() {
   const [expenses, setExpenses] = useState([]);
