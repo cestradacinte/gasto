@@ -19,7 +19,7 @@ function ExpenseList() {
 
   function formatDate(isoDate) {
     const date = new Date(isoDate);
-    return date.toLocaleString();
+    return date.toLocaleDateString();
   }
 
   return (
