@@ -17,12 +17,18 @@ function ExpenseList() {
     loadGastos();
   }, []);
 
+  function formatDate(isoDate) {
+    const date = new Date(isoDate);
+    return date.toLocaleString();
+  }
+
   return (
     <div>
       <h4>Listado de Gastos</h4>
       <table>
         <thead>
           <tr>
+            <th>Fecha</th>
             <th>Descripción</th>
             <th>Monto</th>
           </tr>
@@ -30,6 +36,7 @@ function ExpenseList() {
         <tbody>
           {gastos.map((gasto) => (
             <tr key={gasto.id}>
+              <td>{formatDate(gasto.fecha)}</td>
               <td>{gasto.descripcion}</td>
               <td>${gasto.monto}</td>
             </tr>

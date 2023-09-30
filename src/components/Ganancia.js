@@ -12,7 +12,6 @@ function Ganancia() {
             try {
                 const gastosData = await fetchGastos();
                 const ingresosData = await fetchIngresos();
-                console.log(gastosData)
                 setGastos(gastosData);
                 setIngresos(ingresosData);
             } catch (error) {
