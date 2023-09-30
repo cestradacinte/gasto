@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:8000/api/';
+const API_URL = 'https://gestiongastos-bf4a7f881a7b.herokuapp.com/api/';
 
 const fetchGastos = async () => {
     const response = await axios.get(`${API_URL}gastos/`);
