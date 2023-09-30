@@ -1,23 +1,29 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import ExpenseForm from './components/ExpenseForm';
+import IncomeForm from './components/IncomeForm';
+import Dashboard from './components/Dashboard';
+import Ganancia from './components/Ganancia';
 
 function App() {
+  const [expenses, setExpenses] = useState([]);
+  const [incomes, setIncomes] = useState([]);
+
+  const handleAddExpense = (expense) => {
+    setExpenses([...expenses, expense]);
+  };
+
+  const handleAddIncome = (income) => {
+    setIncomes([...incomes, income]);
+  }
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Control de Gastos</h1>
+      <ExpenseForm onAdd={handleAddExpense} />
+      <IncomeForm onAdd={handleAddIncome} />
+      <Dashboard expenses={expenses} incomes={incomes} />
     </div>
   );
 }
