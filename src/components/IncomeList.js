@@ -18,11 +18,15 @@ function IncomeList() {
         loadIngresos();
     }, []);
 
+    function formatDate(isoDate) {
+        const date = new Date(isoDate);
+        return date.toLocaleDateString();
+      }
     return (
         <div>
             {ingresos.map(ingreso => (
                 <div key={ingreso.id}>
-                    {ingreso.descripcion}: ${ingreso.monto}
+                    {formatDate(ingreso.fecha)}: ${ingreso.monto}
                 </div>
             ))}
         </div>
