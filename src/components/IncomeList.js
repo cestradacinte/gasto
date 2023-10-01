@@ -26,7 +26,7 @@ function IncomeList() {
         <div>
             {ingresos.map(ingreso => (
                 <div key={ingreso.id}>
-                    {formatDate(ingreso.fecha)}: ${ingreso.monto}
+                    {formatDate(ingreso.fecha)}: $ {ingreso.monto}
                 </div>
             ))}
         </div>
