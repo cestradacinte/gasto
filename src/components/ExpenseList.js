@@ -1,21 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { fetchGastos } from "../apiService";
+import React from "react";
 
-function ExpenseList() {
-  const [gastos, setGastos] = useState([]);
+function ExpenseList({gastos}) {
 
-  useEffect(() => {
-    const loadGastos = async () => {
-      try {
-        const data = await fetchGastos();
-        setGastos(data);
-      } catch (error) {
-        console.error("Error fetching expenses:", error);
-      }
-    };
-
-    loadGastos();
-  }, []);
 
   function formatDate(isoDate) {
     const date = new Date(isoDate);

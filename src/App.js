@@ -1,29 +1,22 @@
-import React, { useState } from 'react';
+// App.js
+
+import React from 'react';
 import './App.css';
 import ExpenseForm from './components/ExpenseForm';
+import { AppProvider } from './components/AppContext';   // Importamos AppProvider
 import IncomeForm from './components/IncomeForm';
 import Dashboard from './components/Dashboard';
 
 function App() {
-  const [expenses, setExpenses] = useState([]);
-  const [incomes, setIncomes] = useState([]);
-
-  const handleAddExpense = (expense) => {
-    setExpenses([...expenses, expense]);
-  };
-
-  const handleAddIncome = (income) => {
-    setIncomes([...incomes, income]);
-  }
-
-
   return (
-    <div className="App">
-      <h1>Control de Gastos</h1>
-      <ExpenseForm onAdd={handleAddExpense} />
-      <IncomeForm onAdd={handleAddIncome} />
-      <Dashboard expenses={expenses} incomes={incomes} />
-    </div>
+    <AppProvider>
+      <div className="App">
+        <h1>Control de Gastos</h1>
+        <ExpenseForm />
+        <IncomeForm />
+        <Dashboard />
+      </div>
+    </AppProvider>
   );
 }
 

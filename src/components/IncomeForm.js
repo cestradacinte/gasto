@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { createIngreso } from "../apiService";
+import { AppContext } from "./AppContext";
 
-function IncomeForm({ onAdd }) {
+function IncomeForm() {
+  const { incomes, setIncomes } = useContext(AppContext);
   const [amount, setAmount] = useState("");
 
   const handleSubmit = async (e) => {
@@ -13,10 +15,14 @@ function IncomeForm({ onAdd }) {
 
     try {
       const newIngreso = await createIngreso(data);
-      onAdd(newIngreso); 
+      setIncomes([...incomes, newIngreso]);  
     } catch (error) {
       console.error("Error adding income:", error);
     }
+
+
+    setAmount("");
+
   };
 
   return (

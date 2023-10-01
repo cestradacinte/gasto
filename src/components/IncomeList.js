@@ -1,23 +1,9 @@
 
-import React, { useState, useEffect } from 'react';
-import { fetchIngresos } from '../apiService';
+import React from 'react';
 
-function IncomeList() {
-    const [ingresos, setIngresos] = useState([]);
 
-    useEffect(() => {
-        const loadIngresos = async () => {
-            try {
-                const data = await fetchIngresos();
-                setIngresos(data);
-            } catch (error) {
-                console.error("Error fetching incomes:", error);
-            }
-        };
-
-        loadIngresos();
-    }, []);
-
+function IncomeList({ingresos}) {
+  
     function formatDate(isoDate) {
         const date = new Date(isoDate);
         return date.toLocaleDateString();

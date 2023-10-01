@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { createGasto } from "../apiService";
+import { AppContext } from "./AppContext";
 
-function ExpenseForm({ onAdd }) {
+function ExpenseForm() {
   const [description, setDescription] = useState("");
   const [amount, setAmount] = useState("");
+  const {setExpenses} = useContext(AppContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -12,13 +14,15 @@ function ExpenseForm({ onAdd }) {
             descripcion: description,
             monto: amount
         };
-
         try {
             const newGasto = await createGasto(data);
-            onAdd(newGasto);  
+            setExpenses(prevExpenses => [...prevExpenses, newGasto]);
         } catch (error) {
             console.error("Error adding expense:", error);
         }
+        setDescription("");
+        setAmount("");
+
   };
   return (
     <form onSubmit={handleSubmit} className="ExpenseForm">
