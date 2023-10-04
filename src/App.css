@@ -85,11 +85,38 @@ th, td {
 
 .ganancia-section {
   padding: 20px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  border-radius: 10px;
-  margin: 10px;
-  background-color: #f9f9f9;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  margin-bottom: 20px;
 }
+.ganancia-section h4 {
+  font-size: 1.5em;
+  color: #2c3e50;  /* Un tono de gris oscuro */
+  margin-bottom: 15px;
+}
+.ganancia-section p {
+  margin-bottom: 10px;
+  color: #7f8c8d;  /* Un tono de gris suave */
+  font-size: 1em;
+}
+
+/* ... otros estilos ... */
+.texto_verde{
+  color: #2ecc71;
+  font-weight: bold;
+}
+
+.texto_rojo {
+  color: rgb(150, 31, 31);
+  font-weight: bold;
+}
+
+.texto_azul {
+  color: rgb(39, 39, 175);
+  font-weight: bold;
+}
+
 
 
 h2 {

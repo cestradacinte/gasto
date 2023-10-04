@@ -29,9 +29,9 @@ function Ganancia() {
     return (
         <div>
             <h4>Relación de Ganancias</h4>
-            <p>Ingresos Totales: ${totalIngresos}</p>
-            <p>Gastos Totales: ${totalGastos}</p>
-            <p>Ganancia Neta: ${ganancia}</p>
+            <p>Ingresos Totales: <span className="texto_azul" > ${totalIngresos}</span></p>
+            <p>Gastos Totales: <span className="texto_rojo">${totalGastos}</span></p>
+            <p>Ganancia Neta: <span className='texto_verde'>${ganancia}</span></p>
         </div>
     );
 }
